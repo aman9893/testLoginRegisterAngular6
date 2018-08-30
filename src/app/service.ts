@@ -8,7 +8,7 @@ export class MyServiceService {
     constructor(private http: HttpClient) {}
 
     getPeople() {
-      return this.http.get('http://localhost:4000/v1/employees');
+      return this.http.get('http://localhost:12345/api/list');
     }
 
     Login(message) {

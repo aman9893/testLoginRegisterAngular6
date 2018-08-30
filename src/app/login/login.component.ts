@@ -81,7 +81,11 @@ export class LoginComponent implements OnInit {
    }
      checkDialog(data) {
       console.log(data);
-      this.router.navigate(['/home']);
+      if (data.status === true) {
+        this.router.navigate(['/home']);
+      }  else {
+        alert(data.message);
+      }
     }
 
   login () {

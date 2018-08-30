@@ -9,6 +9,7 @@ app.use(function (req, res, next) {
   next();
 });
 
+var list=require('./controllers/empList');
 var authenticateController=require('./controllers/authenticate-controller');
 var registerController=require('./controllers/register-controller');
 app.use(bodyParser.urlencoded({extended:true}));
@@ -16,4 +17,5 @@ app.use(bodyParser.json());
 /* route to handle login and registration */
 app.post('/api/register',registerController.register);
 app.post('/api/authenticate',authenticateController.authenticate);
+app.get('/api/list',list.listData);
 app.listen(12345);
